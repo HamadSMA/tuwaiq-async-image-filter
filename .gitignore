@@ -1,0 +1,61 @@
+## Build results
+bin/
+obj/
+
+## .NET / Visual Studio
+.vs/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+## Rider / JetBrains
+.idea/
+*.sln.iml
+
+## VS Code
+.vscode/
+!.vscode/settings.json
+!.vscode/launch.json
+!.vscode/tasks.json
+!.vscode/extensions.json
+
+## OS generated files
+.DS_Store
+Thumbs.db
+
+## Logs
+*.log
+
+## NuGet
+packages/
+*.nupkg
+*.snupkg
+.nuget/
+
+## MAUI / Xamarin
+*.apk
+*.aab
+*.app
+*.dSYM/
+*.xcarchive/
+*.ipa
+*.symbols
+
+## macOS / Xcode
+DerivedData/
+*.xcuserstate
+*.xcworkspace
+*.xcodeproj
+
+## Environment files
+.env
+.env.*
+
+## Test results
+TestResults/
+
+## Temporary files
+*.tmp
+*.temp
+*.swp

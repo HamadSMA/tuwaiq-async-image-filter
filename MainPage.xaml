@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TuwaiqAsyncImgFilter.MainPage"
+             Title="">
+    <ContentPage.Content>
+        <Grid Padding="60"
+              HorizontalOptions="Fill"
+              VerticalOptions="Fill">
+            <Grid.Background>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                    <GradientStop Color="#F5F5F5" Offset="0" />
+                    <GradientStop Color="#E0E0E0" Offset="1" />
+                </LinearGradientBrush>
+            </Grid.Background>
+
+            <Border StrokeThickness="2"
+                    Stroke="#C5C5C5"
+                    BackgroundColor="{StaticResource PanelColor}"
+                    Padding="48"
+                    HorizontalOptions="Fill"
+                    VerticalOptions="Fill">
+                <Border.StrokeShape>
+                    <RoundRectangle CornerRadius="24" />
+                </Border.StrokeShape>
+
+                <Grid RowDefinitions="Auto,*"
+                      ColumnDefinitions="Auto,*"
+                      RowSpacing="28"
+                      ColumnSpacing="40">
+                    <VerticalStackLayout Grid.ColumnSpan="2"
+                                         Spacing="8">
+                        <Label Text="Async Filter"
+                               FontSize="34"
+                               FontAttributes="Bold"
+                               TextColor="{StaticResource PrimaryColor}" />
+                        <Label Text="Awating pixels"
+                               FontSize="16"
+                               TextColor="#59606F" />
+                    </VerticalStackLayout>
+
+                    <Button Grid.Row="1"
+                            Text="Upload Image"
+                            WidthRequest="240"
+                            HorizontalOptions="Start"
+                            Clicked="OnUploadClicked" />
+
+                    <Grid Grid.Row="1"
+                          Grid.Column="1"
+                          ColumnDefinitions="*,*"
+                          ColumnSpacing="32"
+                          HorizontalOptions="Fill"
+                          VerticalOptions="Fill">
+                        <Border StrokeThickness="1.5"
+                                Stroke="#B8B8B8"
+                                BackgroundColor="#F4F4F4"
+                                Padding="30"
+                                VerticalOptions="Fill"
+                                HorizontalOptions="Fill">
+                            <Border.StrokeShape>
+                                <RoundRectangle CornerRadius="16" />
+                            </Border.StrokeShape>
+                            <VerticalStackLayout Spacing="22"
+                                                 VerticalOptions="Fill"
+                                                 HorizontalOptions="Fill">
+                                <Border HeightRequest="360"
+                                        VerticalOptions="Fill"
+                                        BackgroundColor="#FFFFFF"
+                                        Stroke="#D0D0D0"
+                                        StrokeThickness="2">
+                                    <Border.StrokeShape>
+                                        <RoundRectangle CornerRadius="14" />
+                                    </Border.StrokeShape>
+                                    <Grid Padding="18">
+                                        <Image x:Name="LeftImageView"
+                                               Aspect="AspectFill" />
+                                    </Grid>
+                                </Border>
+                                <Label x:Name="LeftLoadingLabel"
+                                       Text="Loading..."
+                                       Opacity="0"
+                                       FontSize="14"
+                                       TextColor="#555555"
+                                       HorizontalOptions="Start"
+                                       HeightRequest="20" />
+                                <Grid ColumnDefinitions="Auto,*"
+                                      ColumnSpacing="18"
+                                      WidthRequest="360">
+                                    <Button Text="Step"
+                                            WidthRequest="150"
+                                            HorizontalOptions="Start"
+                                            Clicked="OnLeftStepClicked" />
+                                    <Button Text="Save"
+                                            Grid.Column="1"
+                                            WidthRequest="150"
+                                            HorizontalOptions="End"
+                                            Clicked="OnLeftSaveClicked" />
+                                </Grid>
+                            </VerticalStackLayout>
+                        </Border>
+
+                        <Border Grid.Column="1"
+                                StrokeThickness="1.5"
+                                Stroke="#B8B8B8"
+                                BackgroundColor="#F4F4F4"
+                                Padding="30"
+                                VerticalOptions="Fill"
+                                HorizontalOptions="Fill">
+                            <Border.StrokeShape>
+                                <RoundRectangle CornerRadius="16" />
+                            </Border.StrokeShape>
+                            <VerticalStackLayout Spacing="22"
+                                                 VerticalOptions="Fill"
+                                                 HorizontalOptions="Fill">
+                                <Border HeightRequest="360"
+                                        BackgroundColor="#FFFFFF"
+                                        Stroke="#D0D0D0"
+                                        StrokeThickness="2">
+                                    <Border.StrokeShape>
+                                        <RoundRectangle CornerRadius="14" />
+                                    </Border.StrokeShape>
+                                    <Grid Padding="18">
+                                        <Image x:Name="RightImageView"
+                                               Aspect="AspectFill" />
+                                    </Grid>
+                                </Border>
+                                <Label HeightRequest="20"
+                                       Text=" "
+                                       HorizontalOptions="Start" />
+                                <Grid ColumnDefinitions="Auto,*"
+                                      ColumnSpacing="18"
+                                      WidthRequest="360">
+                                    <Button x:Name="RightStartButton"
+                                            Text="Start"
+                                            WidthRequest="150"
+                                            HorizontalOptions="Start"
+                                            Clicked="OnRightStartClicked" />
+                                    <Button Text="Save"
+                                            Grid.Column="1"
+                                            WidthRequest="150"
+                                            HorizontalOptions="End"
+                                            Clicked="OnRightSaveClicked" />
+                                </Grid>
+                            </VerticalStackLayout>
+                        </Border>
+                    </Grid>
+                </Grid>
+            </Border>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>
