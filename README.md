@@ -3,6 +3,8 @@
 A small, focused **macOS desktop app** built with **.NET MAUI (.NET 8)**.  
 It plays with images, pixels, and asynchronous processing — I'll be honest with you, it's gonna make the images ugly but it's a necessary sacrifice! Later I will figure out what are we sacrificing them for.
 
+![gif of applying filters to an image of a suspicios dog](./sus-doggo.gif)
+
 ## 🧩 Requirements
 
 - macOS
@@ -11,11 +13,11 @@ It plays with images, pixels, and asynchronous processing — I'll be honest wit
 
 ## ▶️ How to Run
 
-From the project directory:
+From the project directory (point the CLI at the solution file so MSBuild knows which project to run):
 
 ```bash
-dotnet restore
-dotnet build -t:Run -f net8.0-maccatalyst
+dotnet restore tuwaiq-async-image-filter.sln
+dotnet build tuwaiq-async-image-filter.sln -t:Run -f net8.0-maccatalyst
 ```
 
 A native macOS window will launch.
